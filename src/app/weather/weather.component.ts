@@ -26,9 +26,8 @@ export class WeatherComponent implements OnInit {
       .then((data) => {
         try {
           this.isDisplayed = true;
-          console.log('bob');
           this.resultat = new ResultatAtm(
-            Math.floor(((data.main.temp = 273), 15)),
+            Math.floor(data.main.temp - 273),
             data.weather[0].icon,
             data.weather[0].description,
             data.name

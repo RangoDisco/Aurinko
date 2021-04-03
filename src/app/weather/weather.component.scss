@@ -1,0 +1,123 @@
+$bg: #262626;
+$card-bg: #262626;
+$bg-btn: #ffb703;
+
+@font-face {
+  font-family: Cheyenne;
+  src: url(../../assets/fonts/CheyenneSans-Regular.ttf) format("truetype");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Cheyenne;
+  width: 100vw;
+  height: 100vh;
+  background-color: $bg;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+}
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logo {
+  max-width: 40%;
+}
+.form {
+  display: flex;
+  width: 30vmax;
+  flex-direction: column;
+}
+input {
+  background-color: $bg;
+  padding: 0.5rem;
+  margin-bottom: 0.25vmax;
+  font-size: 1.25rem;
+  color: #fff;
+  border: none;
+  border-bottom: 2px solid #fff;
+}
+button {
+  background-color: $bg-btn;
+  cursor: pointer;
+  color: #000;
+  border: none;
+  padding: 10px 5px 10px 5px;
+  font-size: 20px;
+  margin-top: 10px;
+  border-radius: 0.5rem;
+  transition: all 200ms linear;
+  box-shadow: 0 0.7rem 2rem rgba(0, 0, 0, 0.1);
+  &:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.3);
+  }
+}
+.meteo {
+  font-family: Cheyenne;
+  background-color: $card-bg;
+  display: flex;
+  padding: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  max-height: 50vh;
+  min-width: 30vw;
+  max-width: 30vw;
+  margin-top: 30px;
+  border-radius: 1rem;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.35);
+  transition: all 200ms linear;
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-0.2rem);
+    box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.3);
+  }
+}
+.conditions {
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+.lieu {
+  font-size: 2rem;
+}
+
+.temperature {
+  font-size: 5rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .meteo {
+    min-width: 90vw;
+    font-size: 2rem;
+  }
+  .form {
+    min-width: 90vw;
+  }
+  .conditions {
+    font-size: 2rem;
+  }
+  .lieu {
+    font-size: 2rem;
+  }
+  .temperature {
+    font-size: 4rem;
+  }
+  .img > img {
+    max-width: 30%;
+  }
+}

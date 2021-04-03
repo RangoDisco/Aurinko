@@ -1,0 +1,21 @@
+<body>
+    <div class="container">
+        <img [src]="logo" alt="Logo de Aurinko" class="logo">
+        <div class="row">
+            <div class="column">
+                <form class="form" (ngSubmit)="onSubmit()">
+                    <input type="text" name="ville" required placeholder="Votre ville" [(ngModel)]="userVille"
+                        class="textInput">
+                    <button type="submit" class="submit">Rechercher</button>
+                </form>
+                <div *ngIf="isDisplayed" class="meteo">
+                    <div class="conditions">{{resultat.conditions}}</div>
+                    <div class="separator"></div>
+                    <div class="img"><img [src]="conditionsLogo" alt="logoConditions"></div>
+                    <div class="temperature">{{resultat.degrees}}°C</div>
+                    <div class="lieu">{{resultat.ville}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

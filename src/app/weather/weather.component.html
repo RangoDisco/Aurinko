@@ -3,11 +3,14 @@
         <img [src]="logo" alt="Logo de Aurinko" class="logo">
         <div class="row">
             <div class="column">
-                <form class="form" (ngSubmit)="onSubmit()">
-                    <input type="text" name="ville" required placeholder="Votre ville" [(ngModel)]="userVille"
+                <form class="form" (ngSubmit)="resultAtm.valid && onSubmit()" #resultAtm="ngForm">
+                    <input type="text" name="userCity" #userCity placeholder="Votre ville" [(ngModel)]="userChoice"
                         class="textInput">
                     <button type="submit" class="submit">Rechercher</button>
+                    <div class="errors">
+                    </div>
                 </form>
+
                 <div *ngIf="isDisplayed" class="meteo">
                     <div class="conditions">{{resultat.conditions}}</div>
                     <div class="separator"></div>
